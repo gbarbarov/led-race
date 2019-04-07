@@ -19,17 +19,21 @@
 
  Code made dirty and fast, next improvements in: 
  https://github.com/gbarbarov/led-race
+ https://www.hackster.io/gbarbarov/open-led-race-a0331a
+ https://twitter.com/openledrace
 */
 
                                                             
 #include <Adafruit_NeoPixel.h>
+#define MAXLED         300 // MAX LEDs actives on strip
+
 #define PIN_LED        A0  // R 500 ohms to DI pin for WS2812 and WS2813, for WS2813 BI pin of first LED to GND  ,  CAP 1000 uF to VCC 5v/GND,power supplie 5V 2A  
 #define PIN_P1         7   // switch player 1 to PIN and GND
 #define PIN_P2         6   // switch player 2 to PIN and GND 
 #define PIN_AUDIO      3   // through CAP 2uf to speaker 8 ohms
 
 
-int NPIXELS=300;
+int NPIXELS=MAXLED; // leds on track
 
 #define COLOR1    track.Color(255,0,0)
 #define COLOR2    track.Color(0,255,0)
@@ -40,7 +44,7 @@ int win_music[] = {
   3136    
 };
       
-byte  gravity_map[300];     
+byte  gravity_map[MAXLED];     
 
 int TBEEP=3; 
 
@@ -66,7 +70,7 @@ byte draworder=0;
  
 unsigned long timestamp=0;
 
-Adafruit_NeoPixel track = Adafruit_NeoPixel(NPIXELS, PIN_LED, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel track = Adafruit_NeoPixel(MAXLED, PIN_LED, NEO_GRB + NEO_KHZ800);
 
 int tdelay = 5; 
 
