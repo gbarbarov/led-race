@@ -16,22 +16,29 @@
  (at your option) any later version.
 
  by gbarbarov@singulardevices.com  for Arduino day Seville 2019 
-
- Code made dirty and fast, next improvements in: 
- https://github.com/gbarbarov/led-race
  https://www.hackster.io/gbarbarov/open-led-race-a0331a
  https://twitter.com/openledrace
+ 
+ Code made dirty and fast, next improvements in: 
+ https://gitlab.com/open-led-race
+ https://openledrace.net/open-software/
 */
 
                                                             
 #include <Adafruit_NeoPixel.h>
 #define MAXLED         300 // MAX LEDs actives on strip
 
+//Pins Arduino Day 19 version 
 #define PIN_LED        A0  // R 500 ohms to DI pin for WS2812 and WS2813, for WS2813 BI pin of first LED to GND  ,  CAP 1000 uF to VCC 5v/GND,power supplie 5V 2A  
 #define PIN_P1         7   // switch player 1 to PIN and GND
 #define PIN_P2         6   // switch player 2 to PIN and GND 
 #define PIN_AUDIO      3   // through CAP 2uf to speaker 8 ohms
 
+//Pins Maker Faire Roma 19 version 
+//#define PIN_LED        2  // R 500 ohms to DI pin for WS2812 and WS2813, for WS2813 BI pin of first LED to GND  ,  CAP 1000 uF to VCC 5v/GND,power supplie 5V 2A  
+//#define PIN_P1         A0 // switch player 1 to PIN and GND
+//#define PIN_P2         A2 // switch player 2 to PIN and GND 
+//#define PIN_AUDIO      3  // through CAP 2uf to speaker 8 ohms
 
 int NPIXELS=MAXLED; // leds on track
 
